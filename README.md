@@ -1,7 +1,7 @@
 <h3>Baisc vi editor</h3>
 
 #os name and version:
-1. using uname -a command is os name and version get the detail.
+using uname -a command is os name and version get the detail.
 
 #kernal version:
 using uname -r command is only kernal version show that
