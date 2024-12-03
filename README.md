@@ -1,4 +1,4 @@
-<h3>Baisc vi editor</h3>
+<h3>Basic vi editor</h3>
 
 #os name and version:
 using uname -a command is os name and version get the detail.
