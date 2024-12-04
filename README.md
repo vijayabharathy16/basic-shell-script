@@ -123,7 +123,7 @@ echo $[ $c != $b ]
 # string operator
 f=""
 [ -z $f ]
-
+<hr>
 <h3>3.Basic network commands</h3>
 
 1. Ping - using network device communication proper checking the process
