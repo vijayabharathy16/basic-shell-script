@@ -59,7 +59,3 @@ ls -l | grep wel (wel short key all the file getting that)
 
 
 
-
-
-
-
