@@ -1,32 +1,31 @@
 #! /bin/bash
 
-# Variable declaration
-greeting="System Information Script"
-cpu_info=""
-disk_space_info=""
-memory_info=""
 
 # Display Greeting
 echo "$greeting"
 
-# Get CPU information
-cpu_info=$(lscpu | grep 'Model name' )
-echo "CPU Information: $cpu_info"
 
-# Get Disk Space information
-disk_space_info=$(df -h / | grep '/' )
-echo "Available Disk Space: $disk_space_info"
+# Variable declaration
+cpu_cores=0
+available_disk_space=""
+total_memory=""
+available_memory=""
 
-# Get Memory Information
-memory_info=$(free -h | grep Mem )
-echo "Available Memory: $memory_info"
+# Get the number of CPU cores
+cpu_cores=$(nproc)
+echo "Number of CPU Cores: $cpu_cores"
 
-# Get OS version information
-os_version=$(cat /etc/os-release | grep "^PRETTY_NAME" )
-echo "Operating System Version: $os_version"
+# Get available disk space for the root filesystem
+available_disk_space=$(df -h / | awk 'NR==2 {print $4}' )
+echo "Available Disk Space: $available_disk_space"
 
-# Get Kernel version information
-kernel_version=$(uname -r)
-echo "Kernel Version: $kernel_version"
+# Get total memory
+total_memory=$(free -h | awk '/Mem:/ {print $2}')
+echo "Total Memory: $total_memory"
+
+# Get available memory
+available_memory=$(free -h | awk '/Mem:/ {print $7}')
+echo "Available Memory: $available_memory"
+
 
 
